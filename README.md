@@ -13,6 +13,6 @@
 - input file name sample.csv
 - output file name output.txt
 
-### npm run task3
+### npm run build-task3
 - to build task3
 - output file name read-csv.babel.bundle.js
