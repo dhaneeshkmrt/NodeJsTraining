@@ -10,4 +10,5 @@ csv().fromFile(csvFilePath)
       if(err) throw err;
       console.log('File is created successfully');
     })
-  })
+  });
+  
