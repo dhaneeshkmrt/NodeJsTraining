@@ -5,10 +5,10 @@
   "main": "read-csv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "task1": "nodemon reverse-string.js",
-    "task2": "nodemon read-csv.js",
-    "task3": "babel-node babel-read-csv.js",
-    "build-task3": "babel babel-read-csv.js --out-file read-csv.babel.bundle.js "
+    "task1": "nodemon homework1/reverse-string.js",
+    "task2": "nodemon homework1/read-csv.js",
+    "task3": "babel-node homework1/babel-read-csv.js",
+    "build-task3": "babel homework1/babel-read-csv.js --out-file homework1/read-csv.babel.bundle.js "
   },
   "repository": {
     "type": "git",
