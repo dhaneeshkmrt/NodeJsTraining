@@ -9,14 +9,15 @@ app.use(express.json());
 const PORT = 4000;
 
 app.listen(PORT, async () => {
-  console.log(`server is running on ${PORT}.`);
+ 
   try {
     await createConnection();
     createRoutes();
-
+    console.log(`server is running on ${PORT}.`);
   } catch (error) {
     console.log('error connections', error);
   }
+
 });
 
 function createRoutes() {

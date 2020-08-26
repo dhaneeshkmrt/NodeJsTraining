@@ -1,17 +1,22 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Group } from "./group.entity";
 
 @Entity()
 export class User extends BaseEntity {
 
   @PrimaryGeneratedColumn()
-  id:number;
+  id: number;
 
   @Column()
   name: string;
 
   @Column()
-  age: number
+  age: number;
 
   @Column()
   email: string;
+
+  @ManyToMany(type => Group)
+  @JoinTable()
+  groups: Group[];
 }

@@ -10,7 +10,8 @@
     "task3": "babel-node babel-read-csv.js",
     "build-task3": "babel babel-read-csv.js --out-file read-csv.babel.bundle.js",
     "home-work-2": "ts-node-dev home-work-2/server.ts",
-    "home-work-3": "ts-node-dev home-work-3/app.ts"
+    "home-work-3": "ts-node-dev home-work-3/app.ts",
+    "home-work-4": "ts-node-dev home-work-3/app.ts"
   },
   "repository": {
     "type": "git",
