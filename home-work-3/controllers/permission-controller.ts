@@ -1,17 +1,17 @@
 import { NextFunction, Request, Response } from "express";
 import Container from "typedi";
-import { UserService } from "../services/user-service";
+import { PermissionService } from "../services/permission-service";
 
-export class UserController {
-  private userService: UserService;
+export class PermissionController {
+  private permissionService: PermissionService;
 
   constructor() { 
-    this.userService = Container.get(UserService);
+    this.permissionService = Container.get(PermissionService);
   }
 
   async all(request: Request, response: Response, next: NextFunction) {
     try {
-      return await this.userService.all();
+      return await this.permissionService.all();
     } catch (error) {
       console.log('all error', error);
     }
@@ -19,23 +19,18 @@ export class UserController {
 
   async find(request: Request, response: Response, next: NextFunction) {
     try {
-      return await this.userService.find(Number(request.params.id));
+      return await this.permissionService.find(Number(request.params.id));
     } catch (error) {
       console.log('one error', error);
     }
   }
 
   async save(request: Request, response: Response, next: NextFunction) {
-    return await this.userService.save(request.body);
+    return await this.permissionService.create(request.body);
   }
 
   async remove(request: Request, response: Response, next: NextFunction) {
-    const isUserRemoved = await this.userService.remove(Number(request.params.id));
+    const isUserRemoved = await this.permissionService.remove(Number(request.params.id));
     return isUserRemoved;
-  }
-
-  async addUsersToGroup(request: Request, response: Response, next: NextFunction) {
-    const group = await this.userService.addUsersToGroup(request.body);
-    return group;
   }
 }
